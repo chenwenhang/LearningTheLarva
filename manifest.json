@@ -1,0 +1,52 @@
+{
+    "manifest_version": 2,
+    "name": "__MSG_extName__",
+    "version": "1.0",
+    "default_locale": "zh_CN",
+    "description": "__MSG_extDescription__",
+    "icons":
+    {
+        "16": "img/16.png",
+        "32": "img/32.png",
+        "48": "img/48.png",
+        "128": "img/128.png"
+    },
+    "browser_action":
+    {
+        "default_icon": "img/16.png"
+    },
+    "background":
+    {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    "content_scripts": [
+    {
+        "js": [
+            "js/login.js"
+        ],
+        "matches": [
+            "*://218.94.85.5/ww/login.html*"
+        ]
+    },{
+        "js": [
+            "js/index.js"
+        ],
+        "matches": [
+            "*://218.94.85.5/ww/u/a/wwua_cont.html*"
+        ]
+    },{
+        "js": [
+            "js/course.js"
+        ],
+        "matches": [
+            "*://218.94.85.5/wt/g/c/wtgc_cont.html*"
+        ]
+    }],
+    "permissions": [
+        "*://218.94.85.5/*",
+        "tabs",
+        "notifications"
+    ]
+}
