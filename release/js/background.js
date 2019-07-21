@@ -94,6 +94,24 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     }
 });
 
+//标签页移除事件
+chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+    if (tabId === scoreTabId) {
+        scoreTabId = 0;
+    }
+});
+
+//窗口移除事件
+// if (!isMobile) {
+//     chrome.windows.onRemoved.addListener(function (windowId) {
+//         if (windowId === scoreWindowId) {
+//             scoreWindowId = 0;
+//             chrome.browserAction.setBadgeText({"text": ""});
+//         }
+//     });
+// }
+
+
 //通信事件
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     switch (request.method) {
