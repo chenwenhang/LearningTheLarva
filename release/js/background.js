@@ -77,7 +77,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
             if (scoreTabId) {
                 notice(chrome.i18n.getMessage("extWorking"));
             } else {
-                createWindow(urlMap.login, function(window) {
+                createWindow(urlMap.course, function(window) {
                     scoreWindowId = window.id;
                     scoreTabId = window.tabs[window.tabs.length - 1].id;
                 });
@@ -86,7 +86,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
             if (scoreTabId) {
                 notice(chrome.i18n.getMessage("extWorking"));
             } else {
-                chrome.tabs.create({ "url": urlMap.login }, function(tab) {
+                chrome.tabs.create({ "url": urlMap.course }, function(tab) {
                     scoreTabId = tab.id;
                 });
             }

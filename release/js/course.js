@@ -20,6 +20,7 @@ function sendRequest(url) {
 
 
 while (true) {
+
     // 获取表格
     let table = document.getElementById("tbody");
     let sign = 1;
